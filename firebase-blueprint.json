@@ -1,0 +1,23 @@
+{
+  "entities": {
+    "HistoryItem": {
+      "title": "Storyboard History Item",
+      "description": "Stores the input script and generated storyboard result for a user.",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string", "description": "The UID of the user who created this item." },
+        "title": { "type": "string", "description": "A short title for the history item." },
+        "input": { "type": "string", "description": "The original user input script." },
+        "result": { "type": "string", "description": "The generated storyboard markdown result." },
+        "timestamp": { "type": "number", "description": "The creation timestamp in milliseconds." }
+      },
+      "required": ["userId", "title", "input", "result", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/history/{historyId}": {
+      "schema": "HistoryItem",
+      "description": "User's storyboard generation history."
+    }
+  }
+}
