@@ -54,7 +54,7 @@ import {
 } from "firebase/firestore";
 
 // Initialize Gemini API
-const genAI = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+const genAI = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 
 const SYSTEM_INSTRUCTION = `
 # Role: 顶级AI视频分镜与提示词大师 (20年经验)
